@@ -2,7 +2,7 @@
   <div>
     <div>
       <img
-        class="product-images"
+        class="image--product-display"
         v-bind:title="item.name"
         v-bind:src="item.productImageUrl"
         v-bind:alt="item.productImageAltText"
@@ -11,7 +11,7 @@
       <p>Code: {{ item.code }}</p>
       <p>Stock : {{ item.salesUnit }}</p>
       <b>Price £{{ item.price.formattedValue }}</b>
-      <a class="product-link" v-bind:href="item.url">View Product</a>
+      <a class="button--product-advance" v-bind:href="item.url">View Product</a>
     </div>
   </div>
 </template>
@@ -25,9 +25,9 @@ export default {
 };
 </script>
 <style lang="sass">
-.product-images
+.image--product-display
   width: 200px
-.product-link
+.button--product-advance
   display: block
   width: 150px
   text-decoration: none
