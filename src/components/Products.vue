@@ -1,12 +1,24 @@
 <template>
   <div>
-    Test
+    
+      <div>
+        <img v-bind:title="item.name" width="61" height="46" v-bind:src="item.productImageUrl" v-bind:alt="item.productImageAltText">
+        <p>{{ item.name }}</p>
+        <p>{{ item.code }}</p>
+        <p>Stock : {{ item.salesUnit }}</p>
+        <p>£{{ item.price.formattedValue }}</p>
+      </div>
   </div>
 </template>
 
 <script>
+
+
 export default {
   name: "Products",
+  props: {
+    item: Object
+  }
 };
 </script>
 

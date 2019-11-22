@@ -1,14 +1,22 @@
 <template>
   <div id="app">
-    <Products />
+    <li v-for="item in items.carouselData" :key="item.code">
+      <Products v-bind:item="item" />
+    </li>
   </div>
 </template>
 
 <script>
 import Products from "./components/Products.vue";
+import items from "./data.json";
 
 export default {
   name: "app",
+  data: function() {
+    return {
+      items: items
+    };
+  },
   components: {
     Products
   }
